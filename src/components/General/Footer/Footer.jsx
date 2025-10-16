@@ -6,6 +6,7 @@ const Footer = () =>{
     <>
       <footer> 
         <p>© {year} - Todos los derechos reservados - AGORA </p>
+        <p> Autor: Lilén Amado </p>
         <div className='social-media'>
           <a href="" target="_blank" rel="noopener noreferrer">Facebook</a> 
           <a href="" target="_blank" rel="noopener noreferrer">Instagram</a> 

@@ -1,4 +1,3 @@
-// import { useState } from "react"
 import { Link } from 'react-router-dom'
 import Text from '../components/General/Text/Text'
 import PrimaryBanner from "../components/Home/PrimaryBanner/PrimaryBanner"
@@ -26,7 +25,6 @@ const Home = ({data}) =>{
       </div>
 
       <Products data={data} element={'popular'}/>
-        
     </>
   )
 }

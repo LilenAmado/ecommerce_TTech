@@ -10,13 +10,12 @@ const PrimaryBanner = () => {
           <Text element={'important-text'} text={'ÁGORA'}/>
           <Text element={'banner'} text={'Encontra todo lo que necesitas'} />
           <div className='flex-banner'>
-            <Text element={'subtitle'} text={'Los mejores productos'}/> {/* al mejor precio */}
+            <Text element={'subtitle'} text={'Los mejores productos'}/>
             <Text element={'spam-banner'} text={'al mejor precio'} />
           </div>
         </div>
         <img src={Banner} alt="" width={250} style={{marginTop: '30px'}}/>
       </div>
-      
     </div>
   )
 }

@@ -6,7 +6,6 @@ import search from '../../../assets/search.png'
 import './Header.css'
 
 const Header = () =>{
-  
   const { isHovered, setIsHovered } = useContext(ProyectContext);
 
   return (
@@ -42,9 +41,7 @@ const Header = () =>{
           </li>
         </ul>
       </nav>
-      
     </header>
-
   )
 }
 

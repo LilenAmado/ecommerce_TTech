@@ -28,15 +28,12 @@ const Text = ({element, text}) => {
                 setClase('text');
         }
     }
-    
-    
+
     useEffect(() => {
         setClassName(element)
     }, [])
 
-    return(
-        <p className={clase}>{text}</p>
-    )
+    return( <p className={clase}>{text}</p> )
     
 }
 

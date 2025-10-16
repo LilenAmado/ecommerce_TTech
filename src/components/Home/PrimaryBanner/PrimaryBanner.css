@@ -8,19 +8,8 @@
     background-image: url('../../../assets/img-banner-background.png');
     background-size: 40%;
     background-position:  5% 85%;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 14px 18px var(--color-background-category); */
-
     background-position: 0 85%;
     background-repeat: no-repeat;
-    
-
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-clip: border-box;
-    background-attachment: fixed; */
 }
 
 .primary-banner > div{

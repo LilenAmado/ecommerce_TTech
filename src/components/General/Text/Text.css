@@ -1,14 +1,9 @@
-/* --font-main: 'Montserrat', sans-serif;
-    --font-secondary: 'Inter', sans-serif;
-    --subtitle-size: 20px; */
-
-
 @import '../../../styles/variables.css';
 
 .important-text{
     font-size: 50px;
     font-family: var(--font-main);
-    color: var(--color-button-secondary); /* --color-primary-var */
+    color: var(--color-button-secondary); 
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
     padding-left: 5px;

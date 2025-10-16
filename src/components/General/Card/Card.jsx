@@ -55,12 +55,12 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
     if (typeCard === 'category') {
         return (
             
-                <div className="card-category">
-                    <Link to={'products'}>
-                    { image && <img src={image} alt="card" width={80} className='img-category'/> }
-                    <Text element={'subtitle'} text={textTitle(title)} />
-                    </Link>
-                </div>
+            <div className="card-category">
+                <Link to={'products'}>
+                { image && <img src={image} alt="card" width={80} className='img-category'/> }
+                <Text element={'subtitle'} text={textTitle(title)} />
+                </Link>
+            </div>
             
         )
     } else if (typeCard === 'offer') {

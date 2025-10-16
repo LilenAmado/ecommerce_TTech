@@ -9,15 +9,14 @@ import './Categories.css'
 
 const Categories = ({data}) => {
   // Obtener categorías únicas
-  const categories = [...new Set(data.map(item => item.category))] // ver como funciona pq no entiendo
+  const categories = [...new Set(data.map(item => item.category))] 
   const categoryImages = [{
     "electronics": electronics,
     "jewelery": jewelery,
     "men's clothing": menClothing,
     "women's clothing": womenClothing
   }];
-
-
+  
   return (
     <div className="categories-container"> 
       <Text element={'title'} text={'Categorías'} />

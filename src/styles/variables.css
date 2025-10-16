@@ -8,13 +8,13 @@
     --color-background-category: #d5d6d9;
     --color-text-primary: #111827;
     --color-text-secondary: #4B5563;
-    --color-primary: #2563EB; /* header, enlaces principales, hover, detalles de branding*/ 
+    --color-primary: #2563EB; 
     --color-primary-var: #2564ebe6;
-    --color-button-primary: #F97316; /* botones de “Comprar”, “Añadir al carrito”, “Checkout”*/ 
-    --color-button-secondary: #10B981; /* botones secundarios, “confirmado”, estados positivos*/
-    --color-accent-yellow: #F59E0B; /* etiquetas, promociones o destacados*/
+    --color-button-primary: #F97316; 
+    --color-button-secondary: #10B981; 
+    --color-accent-yellow: #F59E0B; 
     --color-accent-yellow-var: #ffcc00;
-    --color-accent-purple: #A855F7; /* detalles, modernidad, resaltar categorías o iconos*/
+    --color-accent-purple: #A855F7; 
     --color-header: #4b556313;
     --color-background-footer: #777d86;
     
@@ -29,18 +29,3 @@
     /* Border */
     --border-radius: 30px;
 }
-
-/* borrar luego
-- **Header / Navbar**: fondo blanco + azul (#2563EB) en links activos.
-- **Botón Comprar**: naranja (#F97316) con texto blanco.
-- **Botón Secundario (Ver más)**: verde (#10B981).
-- **Cards de productos**: fondo blanco con borde gris (#E5E7EB).
-- **Promos / Etiquetas “Nuevo”**: amarillo (#F59E0B).
-- **Detalles modernos (íconos, hover suaves)**: violeta (#A855F7).
-- **Texto general**: gris oscuro (#111827).
-*/
-
-/* 
-  --font-main: 'Roboto', sans-serif;
-  --spacing: 1rem;
-  --border-radius: 8px; */
