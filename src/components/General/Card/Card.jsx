@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react';
 import Button from '../Button/Button';
 import Text from '../Text/Text';
-import { ProyectContext } from '../../../context/proyectContext';
+import { ProyectContext } from '../../../context/ProyectContext.jsx';
 import { Link } from 'react-router-dom';
 import './Card.css'
 
