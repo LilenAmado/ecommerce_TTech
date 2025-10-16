@@ -1,0 +1,28 @@
+@import "../../../styles/variables.css";
+
+.categories-container{
+    margin-top: 30px;
+}
+
+.items-categories-container > h2{
+    margin-bottom: 10px;
+    font-size: var(--subtitle-size);
+    font-family: var(--font-main);
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.items-categories-container{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 70%;
+    margin: 0 auto 20px auto;
+}
+
+.item-categories{
+    width: 130px;
+    height: 150px;
+    background-color: var(--color-background-secondary);
+}

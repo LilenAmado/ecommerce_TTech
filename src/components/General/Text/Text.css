@@ -1,0 +1,55 @@
+/* --font-main: 'Montserrat', sans-serif;
+    --font-secondary: 'Inter', sans-serif;
+    --subtitle-size: 20px; */
+
+
+@import '../../../styles/variables.css';
+
+.important-text{
+    font-size: 50px;
+    font-family: var(--font-main);
+    color: var(--color-button-secondary); /* --color-primary-var */
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.title{
+    font-size: var(--subtitle-size);
+    font-family: var(--font-main);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 30px;
+}
+.banner{
+    font-size: var(--subtitle-size);
+    font-family: var(--font-main);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 10px; 
+}
+.subtitle{
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    text-transform: capitalize;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.spam-banner{
+    font-family: var(--font-main);
+    font-size: 18px;
+    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--color-button-primary)
+}

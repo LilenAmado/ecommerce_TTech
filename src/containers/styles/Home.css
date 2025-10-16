@@ -1,0 +1,40 @@
+@import '../../styles/variables.css';
+
+.offer-container{
+    margin-top: 60px;
+}
+
+.items-offer-container > h2{
+    margin-bottom: 10px;
+    font-size: var(--subtitle-size);
+    font-family: var(--font-main);
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.items-offer-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.item-offer{
+    width: 130px;
+    height: 150px;
+    background-color: var(--color-background-secondary);
+}
+
+.btn-offer-plus{
+    margin-right: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: var(--font-main);
+    color: var(--color-text-secondary); 
+    transition: color 150ms ease; 
+    font-size: 16px;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+}
+.btn-offer-plus:hover { 
+    color: var(--color-text-primary); 
+}

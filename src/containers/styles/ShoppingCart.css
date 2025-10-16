@@ -1,0 +1,44 @@
+@import '../../styles/variables.css';
+
+.shoppingCart-container{
+    width: 50%;
+    margin: 30px 25% 50px 25%;
+}
+
+.shoppingCart-button{
+    width: 50%;
+    margin: 50px 25% 0 25%;
+}
+
+.shoppingCart-container > .title-cart, .shoppingCart-container > .quantity-cart{
+    padding-left: 50px;
+    padding-top: 10px;
+    font-family: var(--font-secondary);
+    font-size: 16px;
+}
+
+.btn-cart{
+    width: 30px;
+    height: 35px;
+    background-color: var(--color-background-footer);
+    border-radius: 10%;
+    text-align: center;
+    margin-left: 1px;
+    margin-top: 0px;
+}
+.shoppingCart-container > .quantity-cart{
+    margin-right: 20px;
+}
+.btn-cart:last-child{
+    margin-right: 10px;
+}
+
+.title-empty-cart{
+    text-align: center;
+    margin-top: -30px;
+}
+
+.shoppingCart-button-empty-cart {
+    width: 50%;
+    margin: -30px 25% 0 25%;
+}
