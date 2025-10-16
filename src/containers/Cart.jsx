@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { ProyectContext } from '../context/ProyectContext';
+import { ProyectContext } from '../context/proyectContext';
 import Button from '../components/General/Button/Button';
 import { handleUpdatedToCart } from '../utils/functions'
 import './styles/Cart.css'
