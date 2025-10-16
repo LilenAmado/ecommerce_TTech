@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ProyectContext } from '../context/ProyectContext';
+import { ProyectContext } from '../context/proyectContext';
 import { Link } from 'react-router-dom';
 import Button from '../components/General/Button/Button';
 import Text from '../components/General/Text/Text';
