@@ -1,6 +1,14 @@
+import { useContext, useEffect } from 'react';
+import { ProyectContext } from '../context/ProyectContext.jsx';
 import Text from '../components/General/Text/Text'
 
 const Contacto = () => {
+    const { setActiveSection } = useContext(ProyectContext);
+
+    useEffect(() => {
+        setActiveSection('contact')
+    }, [])
+    
     return(
         <>  
             <Text element={'title'} text={'Contacto'} />
