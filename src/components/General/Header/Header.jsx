@@ -6,7 +6,7 @@ import search from '../../../assets/search.png'
 import './Header.css'
 
 const Header = () =>{
-  const { isHovered, setIsHovered } = useContext(ProyectContext);
+  const { isHovered, setIsHovered, activeSection} = useContext(ProyectContext);
 
   return (
     <header>
@@ -21,9 +21,24 @@ const Header = () =>{
       </div>
       <nav>
         <ul>
-          <li> <Link to={'products'}>Productos</Link> </li>
-          <li> <Link to={'contact'}>Contacto</Link> </li>
-          <li> <Link to={'help'}>Ayuda</Link> </li>
+          <li> 
+            <Link 
+              to={'products'} 
+              className={activeSection === 'products' ? 'active-link' : ''}
+            > Productos </Link> 
+          </li>
+          <li> 
+            <Link 
+              to={'contact'}
+              className={activeSection === 'contact' ? 'active-link' : ''}
+            > Contacto</Link> 
+          </li>
+          <li> 
+            <Link 
+              to={'help'}
+              className={activeSection === 'help' ? 'active-link' : ''}
+            > Ayuda</Link> 
+          </li>
           <li onClick={() => setIsHovered(!isHovered)} >
             <Link>
               <img src={shoppingCart} className='shopping-cart'/>

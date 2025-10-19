@@ -7,7 +7,7 @@ export const ProyectContextProvider = (props) => {
     const [cart, setCart] = useState([])
     const [isCartEmpty, setIsCartEmpty ] = useState(true)
     const [isHovered, setIsHovered] = useState(false);
-    const [activeSection, setActiveSection] = useState('')
+    const [activeSection, setActiveSection] = useState(undefined)
 
     const value = { cart, setCart, isCartEmpty, setIsCartEmpty, isHovered, setIsHovered, activeSection, setActiveSection}
 

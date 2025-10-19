@@ -24,7 +24,7 @@ header > nav > ul > li {
     padding-right: 30px;
 }
 
-header nav ul li a, header nav ul li a:link, header nav ul li a:visited { 
+header nav ul li a, header nav ul li a:visited { 
     text-decoration: none;
     font-family: var(--font-main);
     color: var(--color-text-secondary); 
@@ -32,7 +32,6 @@ header nav ul li a, header nav ul li a:link, header nav ul li a:visited {
     font-size: 16px;
     /* text-transform: uppercase; */
     font-weight: 600;
-    
 }
 
 header nav ul li a:hover { 
@@ -97,4 +96,9 @@ header > .search-container > input{
 .img-search{
     width: 30px;
     cursor: pointer;
+}
+
+.active-link{
+    font-weight: bold;
+    border-bottom: 1px solid black;
 }
