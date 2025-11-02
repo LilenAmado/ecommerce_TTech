@@ -1,7 +1,7 @@
 export function handleUpdatedToCart (productId, type, cart, setCart, setIsCartEmpty) {
   const updatedCart = cart.map(item => {
     if (item.id === productId) {
-      // obtener precio unitario (si ya está guardado úsalo, si no derivalo)
+      // obtener precio unitario 
       const unitPrice = item.unitPrice ?? (item.quantity ? item.price / item.quantity : item.price);
 
       const newQuantity = type === 'add'
