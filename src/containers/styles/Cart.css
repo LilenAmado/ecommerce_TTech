@@ -94,3 +94,8 @@
 .grid-cart > h2 {
     padding-left: 50px;
 }
+
+.items-cart-container{
+    max-height: 300px;
+    overflow-y: auto;
+}

@@ -41,16 +41,18 @@ const Cart = () =>{
               <img src={cancelar} className='img-cancelar' onClick={() => setIsHovered(!isHovered)}/>
             </div>
             
-            {cart.map((item) => (
-              <div className='cart-product'>
-                <img src={item.image} alt="card" width={80} className='img-cart'/>
-                <p className='title-cart'>{textTitle(item.title)}</p>
-                <p className='price-cart'>${textTitle(item.price)}</p>
-                <p className='quantity-cart'>{item.quantity}</p>
-                <button className='btn-cart' onClick={() => handleAddToCart(item.id, 'add')} >+</button>
-                <button className='btn-cart' onClick={() => handleAddToCart(item.id, 'subtract')} >-</button>
-              </div>
-            ))}
+            <div className='items-cart-container'>
+              {cart.map((item) => (
+                <div className='cart-product'>
+                  <img src={item.image} alt="card" width={80} className='img-cart'/>
+                  <p className='title-cart'>{textTitle(item.title)}</p>
+                  <p className='price-cart'>${textTitle(item.price)}</p>
+                  <p className='quantity-cart'>{item.quantity}</p>
+                  <button className='btn-cart' onClick={() => handleAddToCart(item.id, 'add')} >+</button>
+                  <button className='btn-cart' onClick={() => handleAddToCart(item.id, 'subtract')} >-</button>
+                </div>
+              ))}
+            </div>
             <Link to={'shoppingCart'}>
               <Button text={"Ir al carrito"} />
             </Link>
