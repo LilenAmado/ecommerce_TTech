@@ -30,8 +30,8 @@
 }
 
 .cart p{
-    font-family: var(--font-main);
-    font-size: 13px;
+    font-family: var(--font-secondary);
+    font-size: 16px;
     font-weight: var(--font-weight-normal);
 }
 
@@ -56,6 +56,7 @@
 
 .price-cart{
     margin-left: -19px;
+    padding-top: 10px;
 }
 
 .quantity-cart{

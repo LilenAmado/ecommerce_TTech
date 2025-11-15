@@ -11,11 +11,11 @@ const ShoppingCart = () =>{
 
   const handleAddToCart = (productId, type) => handleUpdatedToCart (productId, type, cart, setCart, setIsCartEmpty)
    
-  const total = (cart || []).reduce((acc, item) => {
+  const total = ( (cart || []).reduce((acc, item) => {
     const qty = item.quantity ?? 0;
     const unit = item.unitPrice ?? (qty ? item.price / qty : item.price ?? 0);
     return acc + unit * qty;
-  }, 0);
+  }, 0)).toFixed(2);
 
 
   return (

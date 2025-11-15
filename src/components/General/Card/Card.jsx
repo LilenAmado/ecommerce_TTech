@@ -85,10 +85,13 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
         )
     } else { // products
         return (
+            
             <div className="card-offer">
+                <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
                 { image && <img src={image} alt="card" width={80} className='img-offer'/> }
                 <Text element={'subtitle'} text={textTitle(title)} />
                 <p>${price}</p>
+                </Link>
                 <Button text={"Agregar 🛒"} onClick={() => handleAddToCart({ id, title, image, price})} />
             </div>
         )

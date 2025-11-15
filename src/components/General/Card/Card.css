@@ -77,7 +77,7 @@
     font-weight: var(--font-weight-bold);
 }
 
-.card-offer > p{
+.card-offer p{
     font-family: var(--font-main);
     font-size: 16px;
     color: var(--color-text-secondary);

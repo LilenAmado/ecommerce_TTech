@@ -17,14 +17,14 @@ const Home = ({data}) =>{
   return (
     <>
       <PrimaryBanner />
-      <Categories data={data}/>
+      {/* <Categories data={data}/> */}
      
-      <div className='items-offer-container'>
+      {/* <div className='items-offer-container'>
         <Text element={'title'} text={'Ofertas Imperdibles'} />
         <Link to={'products'} className='btn-offer-plus' style={{marginTop: '30px'}}>Ver más</Link>
       </div>
 
-      <Products data={data} element={'offer'} />
+      <Products data={data} element={'offer'} /> */}
 
       <div className='items-offer-container'>
         <Text element={'title'} text={'Lo más vendido'} />
