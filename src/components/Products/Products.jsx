@@ -25,7 +25,7 @@ const Products = ({data, element}) => {
       return (
         <div className="products-container"> 
           <div className='items-products-container' key={data.id}>
-            {data.slice(10, 15).map((product) => (
+            {data.slice(5, 15).map((product) => (
               <Card 
                 key={product.id}
                 element={'products'}

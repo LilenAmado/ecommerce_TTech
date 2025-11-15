@@ -7,7 +7,7 @@ import './Card.css'
 
 const Card = ( { id, element, title, image, price, discountedPrice} ) => {
     const [typeCard, setTypeCard] = useState('');
-    const { cart, setCart, setIsCartEmpty} = useContext(ProyectContext);
+    const { cart, setCart, setIsCartEmpty, setIsHovered} = useContext(ProyectContext);
 
     const textTitle = (title) => {
         if (!title) return ''; 
@@ -40,17 +40,25 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
             setCart([...cart, { ...product, quantity: 1 }]);
         } else {
             const quantity = cart.map(item => item.id === product.id
-                    ? { ...item, quantity: item.quantity + 1 }
+                    ? { ...item, quantity: item.quantity + 1}
                     : item
                 );
-            setCart(quantity);
+
+            const price = quantity.map(item => item.id === product.id
+                ? { ...item, price: item.quantity * item.price}
+                : item
+            );
+
+            setCart(price);
         }
         setIsCartEmpty(false)
+        setIsHovered(true)
     };
 
     useEffect(() => {
         typeCardOption(element)
-    }, [])   
+    }, []) 
+    
 
     if (typeCard === 'category') {
         return (
@@ -77,10 +85,13 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
         )
     } else { // products
         return (
+            
             <div className="card-offer">
+                <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
                 { image && <img src={image} alt="card" width={80} className='img-offer'/> }
                 <Text element={'subtitle'} text={textTitle(title)} />
                 <p>${price}</p>
+                </Link>
                 <Button text={"Agregar 🛒"} onClick={() => handleAddToCart({ id, title, image, price})} />
             </div>
         )

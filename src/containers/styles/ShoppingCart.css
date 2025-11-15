@@ -42,3 +42,19 @@
     width: 50%;
     margin: -30px 25% 0 25%;
 }
+
+.price-cart{
+    margin-left: 12px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    /*margin-top: 10px;*/
+    font-weight: 500;
+}
+
+.grid-cart{
+    display: grid;
+    grid-template-columns: repeat(2fr, 1);
+    padding-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
