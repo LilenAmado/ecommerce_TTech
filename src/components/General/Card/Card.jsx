@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import Button from '../Button/Button';
 import Text from '../Text/Text';
 import { ProyectContext } from '../../../context/ProyectContext.jsx';
+import { addOrUpdateCart } from '../../../utils/functions';
 import { Link } from 'react-router-dom';
 import './Card.css'
 
@@ -34,26 +35,31 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
         }
     } 
     
-    const handleAddToCart = (product) => {
-        const existItem = cart.find(item => item.id === product.id) 
-        if (existItem === undefined){
-            setCart([...cart, { ...product, quantity: 1 }]);
-        } else {
-            const quantity = cart.map(item => item.id === product.id
-                    ? { ...item, quantity: item.quantity + 1}
-                    : item
-                );
+    // const handleAddToCart = (product) => {
+    //     const existItem = cart.find(item => item.id === product.id) 
+    //     if (existItem === undefined){
+    //         setCart([...cart, { ...product, quantity: 1 }]);
+    //     } else {
+    //         const quantity = cart.map(item => item.id === product.id
+    //                 ? { ...item, quantity: item.quantity + 1}
+    //                 : item
+    //             );
 
-            const price = quantity.map(item => item.id === product.id
-                ? { ...item, price: item.quantity * item.price}
-                : item
-            );
+    //         const price = quantity.map(item => item.id === product.id
+    //             ? { ...item, price: item.quantity * item.price}
+    //             : item
+    //         );
 
-            setCart(price);
-        }
-        setIsCartEmpty(false)
-        setIsHovered(true)
-    };
+    //         setCart(price);
+    //     }
+    //     setIsCartEmpty(false)
+    //     setIsHovered(true)
+    // };
+
+    const handleAddToCart = (prod) => {
+        addOrUpdateCart(prod, cart, setCart, setIsCartEmpty);
+        setIsHovered(true);
+      };
 
     useEffect(() => {
         typeCardOption(element)
