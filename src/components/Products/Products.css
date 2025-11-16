@@ -18,13 +18,17 @@
 .product-detail-info{
     padding: 20px;
     background-color: #e5e7eb6a;
-    border-radius: var(--border-radius);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 400px;
 }
 
 .img-product-detail{
     width: 200px;
+}
+
+.img-product-detail:hover{
+    transform: scale(1.3);
+    transition: transform 0.3s ease;
 }
 
 .product-detail-info h2{

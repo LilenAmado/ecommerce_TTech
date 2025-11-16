@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import shoppingCart from '../../../assets/shopping-cart.png'
+import user from '../../../assets/user.png'
 import { ProyectContext } from '../../../context/ProyectContext.jsx';
-import search from '../../../assets/search.png'
+//import search from '../../../assets/search.png'
 import './Header.css'
 
 const Header = () =>{
@@ -13,12 +14,12 @@ const Header = () =>{
       <li className='logo-container'>
         <Link to={'/'}> <h1 className='logo'>ÁGO<p>RA</p></h1> </Link>
       </li>
-      <div className='search-container'>
+      {/* <div className='search-container'>
         <input type="search" /> 
         <div>
           <img src={search} className='img-search'/>
         </div>
-      </div>
+      </div> */}
       <nav>
         <ul>
           <li> 
@@ -42,6 +43,12 @@ const Header = () =>{
           <li onClick={() => setIsHovered(!isHovered)} >
             <Link>
               <img src={shoppingCart} className='shopping-cart'/>
+            </Link>
+          </li>
+          {/* <li onClick={() => setIsHovered(!isHovered)} > */}
+          <li>
+            <Link>
+              <img src={user} className='shopping-cart'/>
             </Link>
           </li>
         </ul>
