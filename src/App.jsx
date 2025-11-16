@@ -4,6 +4,7 @@ import Header from "./components/General/Header/Header"
 import Home from "./containers/Home"
 import Footer from "./components/General/Footer/Footer"
 import ProductsContainer from "./containers/ProductsContainer"
+import ProductDetail from "./components/Products/ProductDetail"
 import Contacto from "./containers/Contacto"
 import Ayuda from "./containers/Ayuda"
 import Cart from "./containers/Cart"
@@ -34,6 +35,7 @@ function App() {
           <Route path="/contact" element={<Contacto data={data}/>} />
           <Route path="/help" element={<Ayuda data={data}/>} />
           <Route path="/shoppingCart" element={<ShoppingCart data={data}/>} />
+          <Route path="/product/:id" element={<ProductDetail  data={data} />} />
           <Route path="*" element={<h1>Error 404: Not Found</h1>} />
         </Routes>
       </main>

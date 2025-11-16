@@ -65,8 +65,8 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
             
             <div className="card-category">
                 <Link to={'products'}>
-                { image && <img src={image} alt="card" width={80} className='img-category'/> }
-                <Text element={'subtitle'} text={textTitle(title)} />
+                    { image && <img src={image} alt="card" width={80} className='img-category'/> }
+                    <Text element={'subtitle'} text={textTitle(title)} />
                 </Link>
             </div>
             
@@ -84,13 +84,12 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
             </div>
         )
     } else { // products
-        return (
-            
+        return (            
             <div className="card-offer">
                 <Link to={`/product/${id}`} style={{ textDecoration: 'none' }}>
-                { image && <img src={image} alt="card" width={80} className='img-offer'/> }
-                <Text element={'subtitle'} text={textTitle(title)} />
-                <p>${price}</p>
+                    { image && <img src={image} alt="card" width={80} className='img-offer'/> }
+                    <Text element={'subtitle'} text={textTitle(title)} />
+                    <p>${price}</p>
                 </Link>
                 <Button text={"Agregar 🛒"} onClick={() => handleAddToCart({ id, title, image, price})} />
             </div>
