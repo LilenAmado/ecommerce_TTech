@@ -9,6 +9,8 @@ import Contacto from "./containers/Contacto"
 import Ayuda from "./containers/Ayuda"
 import Cart from "./containers/Cart"
 import ShoppingCart from './containers/ShoppingCart'
+import UserAuth from './components/General/Auth/UserAuth'
+import Login from './components/General/Auth/Login'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './styles/App.css'
 
@@ -30,12 +32,18 @@ function App() {
       <Cart />
       <main className="container-app">
         <Routes>
+          
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Home data={data}/>} />
           <Route path="/products" element={<ProductsContainer data={data}/>} />
           <Route path="/contact" element={<Contacto data={data}/>} />
           <Route path="/help" element={<Ayuda data={data}/>} />
-          <Route path="/shoppingCart" element={<ShoppingCart data={data}/>} />
-          <Route path="/product/:id" element={<ProductDetail  data={data} />} />
+          <Route path="/shoppingCart" element={
+            <UserAuth isAuthenticated={false}>
+              <ShoppingCart data={data}/>
+            </UserAuth>
+          } />
+          <Route path="/product/:id" element={<ProductDetail data={data} />} />
           <Route path="*" element={<h1>Error 404: Not Found</h1>} />
         </Routes>
       </main>

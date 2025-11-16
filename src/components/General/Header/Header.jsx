@@ -45,9 +45,8 @@ const Header = () =>{
               <img src={shoppingCart} className='shopping-cart'/>
             </Link>
           </li>
-          {/* <li onClick={() => setIsHovered(!isHovered)} > */}
           <li>
-            <Link>
+            <Link to={'login'}>
               <img src={user} className='shopping-cart'/>
             </Link>
           </li>
