@@ -46,7 +46,7 @@ const Header = () =>{
             </Link>
           </li>
           <li>
-            <Link to={'login'}>
+            <Link to={'admin'}>
               <img src={user} className='shopping-cart'/>
             </Link>
           </li>
