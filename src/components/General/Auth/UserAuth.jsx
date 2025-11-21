@@ -1,7 +1,9 @@
 import { Navigate } from 'react-router-dom';
+import { useAuthContext } from '../../../context/AuthContext.jsx';
 
-const UserAuth = ({ isAuthenticated, children }) => {
-  if (!isAuthenticated) {
+const UserAuth = ({ children }) => {
+  const { user } = useAuthContext();
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
   return children;

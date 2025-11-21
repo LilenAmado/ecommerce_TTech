@@ -2,11 +2,12 @@
 
 footer{
     padding: 2%; 
-    border: solid 1px black;
-    background-color: var(--color-background-footer);
-    color: var(--color-background-primary);
+    /* border: solid 1px #a5abb5; */
+    background-color: var(--color-background-primary);
+    color: var(--color-text-secondary);
     text-align: center;
     margin-top: 60px;
+    box-shadow: 0 4px 16px -4px var(--color-footer);
 }
 
 .social-media{
@@ -18,6 +19,6 @@ footer{
 
 .social-media > a{
     text-decoration: none;
-    color: var(--color-accent-yellow-var);
+    color: var(--color-button-secondary);
     font-weight: var(--font-weight-bold);
 }

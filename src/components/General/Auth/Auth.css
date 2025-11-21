@@ -1,9 +1,13 @@
-@import "../../../styles/variables.css";
+/* @import '../../styles/variables.css'; */
 
-.btn{
-    background-color: var(--color-button-primary);
+.login-container{
+    width: 50%;
+    margin: 30px 25% 50px 25%;
+}
+.btn-logout {
+    background-color: var(--color-background-category);
     border: none;
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius); */
     color: white;
     font-family: var(--font-main);
     font-size: 16px;
@@ -14,10 +18,5 @@
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    width: 90%;
-}
-
-.btn:hover{
-    background-color: var(--color-accent-yellow);
-    transition: all 300ms ease;
+    width: 23%;
 }
