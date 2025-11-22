@@ -24,6 +24,9 @@ const Text = ({element, text}) => {
             case 'spam-banner':
                 setClase('spam-banner');
                 break;
+            case 'auth':
+                setClase('auth');
+                break;
             default:
                 setClase('text');
         }

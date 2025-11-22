@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import shoppingCart from '../../../assets/shopping-cart.png'
-import user from '../../../assets/user.png'
+import userIcon from '../../../assets/user.png'
 import { ProyectContext } from '../../../context/ProyectContext.jsx';
 //import search from '../../../assets/search.png'
 import './Header.css'
+import { useAuthContext } from '../../../context/AuthContext.jsx';
 
 const Header = () =>{
   const { isHovered, setIsHovered, activeSection} = useContext(ProyectContext);
+  const { user } = useAuthContext();
 
   return (
     <header>
@@ -46,8 +48,8 @@ const Header = () =>{
             </Link>
           </li>
           <li>
-            <Link to={'admin'}>
-              <img src={user} className='shopping-cart'/>
+            <Link to={user ? `/${user}` : '/login'}>
+              <img src={userIcon} className='shopping-cart'/>
             </Link>
           </li>
         </ul>
