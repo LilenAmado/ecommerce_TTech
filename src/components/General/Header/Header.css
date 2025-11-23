@@ -43,6 +43,10 @@ header nav ul li a:hover {
     margin-left: -20px;
 }
 
+.logo-container > a{
+    text-decoration: none;
+}
+
 .logo{
     margin-top: 25px; 
     margin-bottom: 20px;

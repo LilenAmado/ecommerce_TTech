@@ -53,7 +53,7 @@ const Cart = () =>{
                 </div>
               ))}
             </div>
-            <Link to={'shoppingCart'}>
+            <Link to={'shoppingCart'} style={{ textDecoration: 'none' }}>
               <Button text={"Ir al carrito"} />
             </Link>
           </div>
