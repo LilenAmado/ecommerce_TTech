@@ -1,4 +1,4 @@
-/* @import '../../styles/variables.css'; */
+@import '../../../styles/variables.css'; 
 
 .login-container{
     width: 50%;
@@ -12,13 +12,13 @@
     font-family: var(--font-main);
     font-size: 16px;
     cursor: pointer;
-    margin: 20px auto 20px auto;
+    /* margin: 20px auto 20px auto; */
     display: block;
     padding-top: 8px;
     padding-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    width: 23%;
+    /* width: 23%; */
 }
 
 .btn-login {
@@ -58,4 +58,27 @@
     font-weight: var(--font-weight-regular);
     text-align: center;
     display: block;
+}
+
+.admin-flex{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.admin-user-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header-admin-user{
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.user-data{
+    border-right: solid 1px var(--color-background-category);
+    padding-right: 10%;
 }

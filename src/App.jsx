@@ -11,8 +11,8 @@ import Cart from "./containers/Cart"
 import ShoppingCart from './containers/ShoppingCart'
 import UserAuth from './components/General/Auth/UserAuth'
 import Login from './components/General/Auth/Login'
-import Admin from './components/General/Auth/Admin'
-import User from './components/General/Auth/User'
+import Admin from './components/General/Auth/Roles/Admin'
+import User from './components/General/Auth/Roles/User'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './styles/App.css'
 
