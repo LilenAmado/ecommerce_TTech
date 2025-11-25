@@ -58,7 +58,7 @@
     font-style: italic;
 }
 
-form > input, form textarea{
+form > input, form textarea, form > select{
     width: 100%;
     padding: 8px;
     margin: 10px 0;

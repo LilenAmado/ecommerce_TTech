@@ -1,5 +1,5 @@
-import Text from "../General/Text/Text";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Text from "../General/Text/Text";
 import ProductForm from "./ProductForm";
 
 const AdminProductForm = () => {
@@ -31,7 +31,7 @@ const AdminProductForm = () => {
                         data-bs-parent="#accordionExample"
                     >
                         <div className="accordion-body">
-                            <ProductForm element='add' />
+                            <ProductForm action='add' />
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@ const AdminProductForm = () => {
                         data-bs-parent="#accordionExample"
                     >
                         <div className="accordion-body">
-                            <ProductForm element='edit' />
+                            <ProductForm action='edit' />
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@ const AdminProductForm = () => {
                         data-bs-parent="#accordionExample"
                     >
                         <div className="accordion-body">
-                            <ProductForm element='delete' />
+                            <ProductForm action='delete' />
                         </div>
                     </div>
                 </div>
