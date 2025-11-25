@@ -10,7 +10,7 @@ const ProductForm = (props) => {
     const [formData, setFormData] = useState({
         name: '',
         price: '',
-        category: 'electronics',
+        category: '',
         img: '',
         description: ''
     });
