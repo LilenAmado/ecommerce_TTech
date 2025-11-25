@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getResponse } from './controllers/Services'
+import { getResponse, getProducts } from './controllers/Services'
 import Header from "./components/General/Header/Header"
 import Home from "./containers/Home"
 import Footer from "./components/General/Footer/Footer"
@@ -28,8 +28,18 @@ function App() {
     }
   }
 
+  const prueba = async () => {
+    try{
+      const response = await getProducts();
+      console.log('prueba', response);
+    } catch (error) {
+      throw console.error(error)
+    }
+  }
+
   useEffect(() => { 
     getApiResponse()
+    prueba()
   }, [])
   
   return (
