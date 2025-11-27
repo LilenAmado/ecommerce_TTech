@@ -5,7 +5,8 @@ import Text from '../../Text/Text';
 import logoutIcon from '../../../../assets/door-open.svg'
 import '../Auth.css'
 
-const Admin = () => {
+const Admin = (props) => {
+  const { data } = props;
   const { logout } = useAuthContext();
   const navigate = useNavigate();
   
@@ -28,7 +29,7 @@ const Admin = () => {
         </button>
       </div>
       <br /><hr /><br />
-      <AdminProductForm />
+      <AdminProductForm data={data} />
     </>
   )
 }

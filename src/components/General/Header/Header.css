@@ -76,19 +76,22 @@ header nav ul li a:hover {
 
 .search-container{
     width: 90%;
-    margin-top: 15px; 
-    display: grid;
-    grid-template-columns: 85% 15%;
+    margin-top: 18px; 
+    /* display: grid;
+    grid-template-columns: 85% 15%; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: flex-end;
 }
 
 header > .search-container > input{
-    width: 87%;
+    width: 30%;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 2px;
     border: 1px solid var(--color-text-primary);
-    margin-left: 10%;
     margin-right: 10px;
     margin-top: 10px;
+    margin-left: auto;
 }
 
 .search-container > div{ 

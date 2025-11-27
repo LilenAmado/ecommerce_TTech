@@ -98,6 +98,7 @@ const Card = ( { id, element, title, image, price, discountedPrice} ) => {
                     <p>${price}</p>
                 </Link>
                 <Button text={"Agregar 🛒"} onClick={() => handleAddToCart({ id, title, image, price})} />
+                
             </div>
         )
     }

@@ -7,13 +7,13 @@ const Products = ({data, element}) => {
       return (
         <div className="products-container"> 
           <div className='items-products-container' key={data.id}>
-            {data.slice(0, 5).map((product) => (
+            {data.map((product) => (
               <Card 
                 key={product.id}
                 element={'offer'}
                 id={product.id}
-                title={product.title}
-                image={product.image}
+                title={product.name ?? product.title}
+                image={product.img ?? product.image}
                 price={product.price}
                 discountedPrice={10}
               />
@@ -25,13 +25,13 @@ const Products = ({data, element}) => {
       return (
         <div className="products-container"> 
           <div className='items-products-container' key={data.id}>
-            {data.slice(5, 15).map((product) => (
+            {data.map((product) => (
               <Card 
                 key={product.id}
                 element={'products'}
                 id={product.id}
-                title={product.title}
-                image={product.image}
+                title={product.name ?? product.title}
+                image={product.img ?? product.image}
                 price={product.price}
               />
             ))}
@@ -47,8 +47,8 @@ const Products = ({data, element}) => {
                 key={product.id}
                 element={'products'}
                 id={product.id}
-                title={product.title}
-                image={product.image}
+                title={product.name ?? product.title}
+                image={product.img ?? product.image}
                 price={product.price}
               />
             ))}
