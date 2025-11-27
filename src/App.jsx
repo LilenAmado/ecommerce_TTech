@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getResponse, getProducts } from './controllers/Services'
+import { getProducts } from './controllers/Services'
 import Header from "./components/General/Header/Header"
 import Home from "./containers/Home"
 import Footer from "./components/General/Footer/Footer"
@@ -21,17 +21,9 @@ function App() {
 
   const getApiResponse = async () => {
     try{
-      const response = await getResponse();
-      setData(response);
-    } catch (error) {
-      throw console.error(error)
-    }
-  }
-
-  const prueba = async () => {
-    try{
       const response = await getProducts();
-      console.log('prueba', response);
+      setData(response);
+      
     } catch (error) {
       throw console.error(error)
     }
@@ -39,7 +31,6 @@ function App() {
 
   useEffect(() => { 
     getApiResponse()
-    prueba()
   }, [])
   
   return (
@@ -59,13 +50,13 @@ function App() {
           {/* Rutas protegidas */}
           <Route path="/admin" element={
             <UserAuth>
-              <Admin />
+              <Admin data={data} />
             </UserAuth>
           } />
 
           <Route path="/user" element={
             <UserAuth>
-              <User />
+              <User data={data} />
             </UserAuth>
           } />
 
