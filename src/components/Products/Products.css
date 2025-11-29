@@ -1,9 +1,18 @@
 @import '../../styles/variables.css';
 
-.items-products-container{
+.products-container {
+    width: 100%;
+    max-width: 1400px; /* ajustá según tu diseño */
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.items-products-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* responsive automático */
+    gap: 20px;
+    width: 100%;
 }
 
 .product-detail-container{
@@ -118,4 +127,29 @@ form > label{
 .product-detail-info button:active {
     background-color: var(--color-accent-yellow) !important;
     box-shadow: none !important;
+}
+
+@media (max-width: 1024px) {
+    .items-products-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .items-products-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .products-container {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .items-products-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
 }
