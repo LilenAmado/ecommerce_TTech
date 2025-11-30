@@ -31,7 +31,7 @@ const Home = ({data}) =>{
         <Link to={'products'} className='btn-offer-plus' style={{marginTop: '30px'}}>Ver más</Link>
       </div>
 
-      <Products data={data} element={'popular'}/>
+      <Products data={data.slice(0, 5)} element={'popular'}/>
     </>
   )
 }
