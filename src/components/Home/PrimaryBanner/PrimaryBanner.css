@@ -29,3 +29,30 @@
     gap: 10px;
     align-items: center;
 }
+
+@media (max-width: 876px) {
+    .primary-banner {
+        width: 100%;
+    }
+}
+
+@media (max-width: 682px) {
+    .primary-banner{
+        height: 200px;
+        background-size: 60%;
+        background-position: 10% 90%;
+    }
+
+    .primary-banner > div{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .img-banner {
+        display: none;
+    }
+    
+    .flex-banner {
+        flex-direction: column;
+    }
+}

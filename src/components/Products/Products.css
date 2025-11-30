@@ -33,7 +33,13 @@
 
 @media (max-width: 768px) {
     .items-products-container {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+        gap: 12px;
+    }
+}
+@media (min-width: 646px) and (max-width: 768px){
+    .items-products-container {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 140px));
         gap: 12px;
     }
 }

@@ -14,7 +14,7 @@ const PrimaryBanner = () => {
             <Text element={'spam-banner'} text={'al mejor precio'} />
           </div>
         </div>
-        <img src={Banner} alt="" width={250} style={{marginTop: '30px'}}/>
+        <img src={Banner} alt="" width={250} style={{marginTop: '30px'}} className='img-banner'/>
       </div>
     </div>
   )

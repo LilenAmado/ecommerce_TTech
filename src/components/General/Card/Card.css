@@ -89,3 +89,10 @@
     /* padding-bottom: 20px; */
     font-weight: var(--font-weight-bold);
 }
+
+@media (max-width: 646px) {
+    .card-offer{
+        width: 230px !important;
+        margin-left: -50px;
+    }
+}
