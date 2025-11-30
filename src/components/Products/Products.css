@@ -10,7 +10,7 @@
 
 .items-products-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 220px));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
     gap: 20px;
     width: 100%;
     justify-content: center; 
@@ -19,7 +19,7 @@
 
 @media (max-width: 1200px) {
     .items-products-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+        grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
         gap: 18px;
     }
 }
