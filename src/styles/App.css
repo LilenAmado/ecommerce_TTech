@@ -32,3 +32,9 @@ body{
 main {
   flex: 1;
 }
+
+@media (max-width: 876px) {
+  .container-app{
+    margin: auto 5%;
+  }
+}
