@@ -37,7 +37,7 @@ const User = () => {
           <p>Telefono: 281372137</p>
         </div>
 
-        <div>
+        <div className='order-data'>
           <Text element={'subtitle'} text={'Órdenes:'} />
           <p>Orden #1 - Estado: En proceso</p>
           <p>Orden #2 - Estado: Enviado</p>

@@ -122,3 +122,9 @@
     max-height: 300px;
     overflow-y: auto;
 }
+
+@media (max-width: 1000px) {
+    .cart{
+        right: 5%;
+    }
+}

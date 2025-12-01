@@ -83,7 +83,7 @@ form > input, form textarea, form > select{
 }
 
 form > button{
-    background-color: var(--color-background-category);
+    background-color: var(--color-btn-secondary);
     border: none;
     color: white;
     font-family: var(--font-main);
@@ -94,8 +94,9 @@ form > button{
 }
 
 form > button:hover{
-    background-color: var(--color-primary);
-    transition: background-color 0.3s ease;
+    background-color: var(--color-text-secondary);
+    transition: background-color 300ms ease;
+    /* transition: all 300ms ease !important; */
 }
 
 form > label{

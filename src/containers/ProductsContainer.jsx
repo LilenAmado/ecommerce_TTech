@@ -16,7 +16,7 @@ const ProductsContainer = ({data}) => {
         <Text element={'title'} text={'Productos'} />
       </div>
 
-      <Products data={data} element={'products'}/>
+      <Products data={data} element={'products'} /> 
     </div>
   )
 }

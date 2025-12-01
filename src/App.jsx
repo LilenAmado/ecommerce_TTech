@@ -50,7 +50,7 @@ function App() {
           {/* Rutas protegidas */}
           <Route path="/admin" element={
             <UserAuth>
-              <Admin data={data} />
+              <Admin data={data} setData={setData} />
             </UserAuth>
           } />
 

@@ -19,6 +19,6 @@ footer{
 
 .social-media > a{
     text-decoration: none;
-    color: var(--color-button-secondary);
+    color: var( --color-primary-var);
     font-weight: var(--font-weight-bold);
 }
