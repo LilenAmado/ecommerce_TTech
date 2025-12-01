@@ -3,7 +3,7 @@ import Text from "../General/Text/Text";
 import ProductForm from "./ProductForm";
 
 const AdminProductForm = (props) => {
-    const { data } = props;
+    const { data, setData } = props;
     return (
         <>
             <Text element={'subtitle'} text={'Administrar productos'} />
@@ -32,7 +32,7 @@ const AdminProductForm = (props) => {
                             data-bs-parent="#accordionExample"
                         >
                             <div className="accordion-body">
-                                <ProductForm action='add' data={data} />
+                                <ProductForm action='add' data={data} setData={setData} />
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ const AdminProductForm = (props) => {
                             data-bs-parent="#accordionExample"
                         >
                             <div className="accordion-body">
-                                <ProductForm action='edit' data={data} />
+                                <ProductForm action='edit' data={data} setData={setData} />
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ const AdminProductForm = (props) => {
                             data-bs-parent="#accordionExample"
                         >
                             <div className="accordion-body">
-                                <ProductForm action='delete' data={data} />
+                                <ProductForm action='delete' data={data} setData={setData} />
                             </div>
                         </div>
                     </div>

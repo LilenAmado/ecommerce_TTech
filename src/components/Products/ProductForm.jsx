@@ -1,14 +1,16 @@
-import { useState, useEffect, useContext} from "react";
+import { useState, useEffect, useContext } from "react";
 import Text from "../General/Text/Text";
-import { addProducts, updateProducts, deleteProducts } from '../../controllers/Services';
+import { getProducts, addProducts, updateProducts, deleteProducts } from '../../controllers/Services';
 import { ProyectContext } from '../../context/ProyectContext.jsx';
-import './Products.css'
+import './Products.css';
 
 const ProductForm = (props) => {
-    const {action, data} = props;
+    const { action, data, setData } = props;
     const { searchProduct, setSearchProduct } = useContext(ProyectContext);
+
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+
     const [formData, setFormData] = useState({
         name: '',
         price: '',
@@ -16,14 +18,28 @@ const ProductForm = (props) => {
         img: '',
         description: ''
     });
+
     const [originalProduct, setOriginalProduct] = useState(null);
 
-    // Cuando cambia el producto seleccionado, carga sus datos
+    const getApiResponse = async () => {
+        try {
+            const response = await getProducts();
+            setData(response);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     useEffect(() => {
         if (!searchProduct || !data) return;
-        const selected = (data || []).find(p => String(p.id) === String(searchProduct));
+
+        const selected = (data || []).find(
+            p => String(p.id) === String(searchProduct)
+        );
+
         if (selected) {
             setOriginalProduct(selected);
+
             setFormData({
                 name: selected.name ?? '',
                 price: selected.price ?? '',
@@ -44,7 +60,7 @@ const ProductForm = (props) => {
 
     const handleOperation = (type, e) => {
         e.preventDefault();
-        switch(type) {
+        switch (type) {
             case 'add':
                 addProduct(e);
                 break;
@@ -57,10 +73,28 @@ const ProductForm = (props) => {
             default:
                 break;
         }
-    }
+    };
 
+    // VALIDACIÓN
+    const validateRequiredFields = () => {
+        if (!formData.name.trim()) return "El nombre es obligatorio";
+        if (!formData.price || Number(formData.price) <= 0) return "El precio debe ser mayor a 0";
+        if (!formData.category.trim()) return "La categoría es obligatoria";
+        if (!formData.img.trim()) return "La URL de imagen es obligatoria";
+        return null;
+    };
+
+
+    // AGREGAR PRODUCTO
     const addProduct = async (e) => {
         e.preventDefault();
+
+        const validationError = validateRequiredFields();
+        if (validationError) {
+            setError(validationError);
+            return;
+        }
+
         setLoading(true);
         setError(null);
 
@@ -72,10 +106,11 @@ const ProductForm = (props) => {
             img: formData.img || ''
         };
 
-        try{
-            await addProducts(newProduct);
-            
-            // Limpiar formulario
+        try {
+            const saved = await addProducts(newProduct);
+
+            setData(prev => [...prev, saved]);
+
             setFormData({
                 name: '',
                 price: '',
@@ -83,19 +118,31 @@ const ProductForm = (props) => {
                 description: '',
                 img: ''
             });
+
             alert('Producto agregado correctamente');
+            getApiResponse();
+
         } catch (error) {
             setError(error.message);
             console.error('Error:', error);
         } finally {
             setLoading(false);
         }
-    }
+    };
 
+    // MODIFICAR PRODUCTO
     const updateProduct = async (e) => {
         e.preventDefault();
+
+        const validationError = validateRequiredFields();
+        if (validationError) {
+            setError(validationError);
+            return;
+        }
+
         setLoading(true);
         setError(null);
+
         try {
             const updatedData = {
                 name: formData.name || originalProduct.name,
@@ -104,9 +151,16 @@ const ProductForm = (props) => {
                 description: formData.description || originalProduct.description,
                 img: formData.img || originalProduct.img
             };
-            
-            await updateProducts(searchProduct, updatedData);
-            setSearchProduct(''); // Limpiar selección
+
+            const id = searchProduct;
+
+            await updateProducts(id, updatedData);
+
+            setData(prev =>
+                prev.map(p => p.id === Number(id) ? { ...p, ...updatedData } : p)
+            );
+
+            setSearchProduct('');
             setFormData({
                 name: '',
                 price: '',
@@ -114,21 +168,30 @@ const ProductForm = (props) => {
                 description: '',
                 img: ''
             });
+            alert('Producto modificado correctamente');
+            getApiResponse();
+
         } catch (err) {
             setError(err.message);
-            console.error(err);
         } finally {
             setLoading(false);
         }
     };
 
+    // ELIMINAR PRODUCTO
     const removeProduct = async (e) => {
         e.preventDefault();
         setLoading(true);
         setError(null);
+
         try {
-            await deleteProducts(searchProduct);
-            setSearchProduct(''); // Limpiar selección
+            const id = searchProduct;
+
+            await deleteProducts(id);
+
+            setData(prev => prev.filter(p => p.id !== Number(id)));
+
+            setSearchProduct('');
             setFormData({
                 name: '',
                 price: '',
@@ -136,8 +199,10 @@ const ProductForm = (props) => {
                 description: '',
                 img: ''
             });
+            alert('Producto eliminado correctamente');
+            getApiResponse();
+
         } catch (err) {
-            console.error(err);
             setError(err.message);
         } finally {
             setLoading(false);
@@ -147,70 +212,69 @@ const ProductForm = (props) => {
     const productForm = (type, text) => {
         return (
             <form onSubmit={(e) => handleOperation(type, e)}>
-                
+
                 <Text element={'subtitle'} text={text} />
-                
-                { (type === 'edit' || type === 'delete') &&
+
+                {(type === 'edit' || type === 'delete') &&
                     <>
                         <label>Buscar producto:</label>
-                        <select 
-                            value={searchProduct} 
+                        <select
+                            value={searchProduct}
                             onChange={e => setSearchProduct(e.target.value)}
                         >
                             <option value="" disabled> Seleccionar producto </option>
-                            {   
-                                (data || []).map(product => (
-                                    <option key={product.id} value={product.id}>
-                                        {product.name ?? product.title ?? `Producto ${product.id}`}
-                                    </option>
-                                ))
-                            }
+                            {(data || []).map(product => (
+                                <option key={product.id} value={product.id}>
+                                    {product.name ?? product.title ?? `Producto ${product.id}`}
+                                </option>
+                            ))}
                         </select>
                     </>
                 }
-                { (type !== 'delete') &&
+
+                {(type !== 'delete') &&
                     <>
                         <label>Nombre:</label>
-                        <input 
-                            type="text" 
-                            name="name" 
+                        <input
+                            type="text"
+                            name="name"
                             value={formData.name}
                             onChange={handleInputChange}
                             placeholder={originalProduct?.name || 'Nombre del producto'}
                         />
-                        
+
                         <label>Precio:</label>
-                        <input 
-                            type="number" 
-                            name="price" 
+                        <input
+                            type="number"
+                            name="price"
                             value={formData.price}
                             onChange={handleInputChange}
-                            min={0} 
-                            step='any'
+                            min={0}
+                            step="any"
                             placeholder={originalProduct?.price || '0'}
                         />
-                        
+
                         <label>Imagen (URL):</label>
-                        <input 
-                            type="text" 
-                            name="img" 
+                        <input
+                            type="text"
+                            name="img"
                             value={formData.img}
                             onChange={handleInputChange}
                             placeholder={originalProduct?.img || 'URL de imagen'}
                         />
 
                         <label>Categoría:</label>
-                        <input 
-                            type="text" 
-                            name="category" 
+                        <input
+                            type="text"
+                            name="category"
                             value={formData.category}
                             onChange={handleInputChange}
                             placeholder={originalProduct?.category || 'Categoría'}
                         />
 
                         <label>Descripción</label>
-                        <textarea 
-                            name="description" 
+                        <textarea
+                            name="description"
                             rows="4"
                             value={formData.description}
                             onChange={handleInputChange}
@@ -218,29 +282,29 @@ const ProductForm = (props) => {
                         ></textarea>
                     </>
                 }
-                
+
                 {error && <p style={{ color: 'red' }}>{error}</p>}
 
-                <button 
-                    type="submit" 
+                <button
+                    type="submit"
                     className="btn-submit-product-form"
                     disabled={loading}
                 >
                     {loading ? 'Procesando...' : text}
                 </button>
-                
+
             </form>
-        )
-    }
-    
-    if(action){
-        switch(action) {
+        );
+    };
+
+    if (action) {
+        switch (action) {
             case 'add':
-                return productForm(action, 'Agregar producto')
+                return productForm(action, 'Agregar producto');
             case 'edit':
-                return productForm(action, 'Modificar producto')
+                return productForm(action, 'Modificar producto');
             case 'delete':
-                return productForm(action, 'Eliminar producto')
+                return productForm(action, 'Eliminar producto');
             default:
                 return 'Producto';
         }
