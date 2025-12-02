@@ -36,7 +36,7 @@ const Login = () => {
 
         {/* User */}
         <div className='container-user'>
-          <label><Text element={'auth'} text={'Usuario:'} /></label>
+          <label><Text element={'auth'} text={'Usuario'} /></label>
           <input
             type="text"
             value={user}
@@ -46,7 +46,7 @@ const Login = () => {
 
         {/* Password */}
         <div className='container-password'>
-          <label><Text element={'auth'} text={'Password:'} /></label>
+          <label><Text element={'auth'} text={'Password'} /></label>
           <input
             type="password"
             value={password}
