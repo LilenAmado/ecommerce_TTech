@@ -31,8 +31,9 @@ const Login = () => {
   return (
     <>
       <form onSubmit={handleSubmit} className='login-container'>
-        <Text element={'subtitle'} text={'Iniciar sesión'} />
-        <span className='span-login-info'>Usuarios de prueba: admin/1234 - user/1234</span>
+        <div className='title-login'>
+          <Text element={'title'} text={'Iniciar sesión'} />
+        </div>
 
         {/* User */}
         <div className='container-user'>
@@ -58,6 +59,9 @@ const Login = () => {
         <button type="submit" className='btn-login'>Iniciar sesión</button>
         
         {!isAuthenticated && <span className='span-login-error'>Usuario o contraseña incorrecta</span>}
+
+        <span className='span-login-info'>Usuarios de prueba: </span>
+        <span className='span-login-info'>admin/1234 - user/1234</span>
 
       </form>
     </>

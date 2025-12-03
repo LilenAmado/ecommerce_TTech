@@ -53,7 +53,21 @@ const Header = () =>{
             > Ayuda</Link> 
           </li>
 
-          <li onClick={() => setIsHovered(!isHovered)} >
+          {/* <li onClick={() => setIsHovered(!isHovered)} >
+            <Link>
+              <img src={shoppingCart} className='shopping-cart'/>
+            </Link>
+          </li>
+
+          <li>
+            <Link to={user ? `/${user}` : '/login'}>
+              <img src={userIcon} className='shopping-cart'/>
+            </Link>
+          </li> */}
+        </ul>
+      </nav>
+      <div className={`icons-container hamburguericons`}>
+         <li onClick={() => setIsHovered(!isHovered)} >
             <Link>
               <img src={shoppingCart} className='shopping-cart'/>
             </Link>
@@ -64,8 +78,7 @@ const Header = () =>{
               <img src={userIcon} className='shopping-cart'/>
             </Link>
           </li>
-        </ul>
-      </nav>
+      </div>
     </header>
   )
 }
