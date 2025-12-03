@@ -132,9 +132,25 @@ header > .search-container > input{
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+.icons-container{
+    display: flex; 
+    margin-top: 30px; 
+    justify-content: space-around;
+    gap: 25px;
+}
+
+.icons-container > li:last-child{
+    margin-top: 1px; 
+}
+
+
+
 /* NAV MOBILE */
 @media (max-width: 1000px) {
-
+    .hamburguericons{
+        margin-left: 80%;
+        padding-right: 40px;
+    }
     nav {
         position: absolute;
         top: 70px;
@@ -174,5 +190,29 @@ header > .search-container > input{
 
     .hamburger {
         display: flex;
+    }
+}
+
+@media (max-width: 873px) {
+    .hamburguericons{
+        margin-left: 70%;
+    }
+}
+
+@media (max-width: 651px) {
+    .hamburguericons{
+        margin-left: 60%;
+    }
+}
+
+@media (max-width: 495px) {
+    .hamburguericons{
+        margin-left: 45%;
+    }
+}
+
+@media (max-width: 423px) {
+    .hamburguericons{
+        margin-left: 30%;
     }
 }
