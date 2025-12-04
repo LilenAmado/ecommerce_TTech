@@ -5,7 +5,7 @@ import './PrimaryBanner.css'
 const PrimaryBanner = () => {
   return (
     <div className="primary-banner">
-      <div>
+      <div style={{marginTop: '40px'}}>
         <div>
           <Text element={'important-text'} text={'ÁGORA'}/>
           <Text element={'banner'} text={'Encontra todo lo que necesitas'} />
