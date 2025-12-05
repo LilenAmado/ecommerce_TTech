@@ -131,6 +131,7 @@
 
 @media (max-width: 600px) {
     .cart{
-        width: 94%;
+        width: 100%;
+        right: 0%;
     }
 }
