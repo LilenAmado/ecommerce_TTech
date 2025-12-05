@@ -1,7 +1,6 @@
 @import "../../../styles/variables.css";
 
 .header-container{
-    padding-top: 10px;
     display: flex;
     flex-direction: column;
     position: sticky;
@@ -223,6 +222,15 @@ header div nav ul li a:hover {
 
     .hamburger {
         display: flex;
+    }
+
+    .search-container > input {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .search-container > button {
+        margin-right: 0%;
     }
 }
 
