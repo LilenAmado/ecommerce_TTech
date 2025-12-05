@@ -12,7 +12,7 @@ const ProductsContainer = ({data}) => {
 
   return (
     <div className="products-container"> 
-      <div className='items-products-container' style={{marginTop:'-30px'}}>
+      <div className='items-products-container'>
         <Text element={'title'} text={'Productos'} />
       </div>
 
