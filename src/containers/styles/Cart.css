@@ -128,3 +128,10 @@
         right: 5%;
     }
 }
+
+@media (max-width: 600px) {
+    .cart{
+        width: 280px;
+        right: 17%;
+    }
+}
