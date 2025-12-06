@@ -222,12 +222,16 @@ const ProductForm = (props) => {
                             value={searchProduct}
                             onChange={e => setSearchProduct(e.target.value)}
                         >
-                            <option value="" disabled> Seleccionar producto </option>
+                            {/* <option value="" disabled> Seleccionar producto </option> */}
+
+
                             {(data || []).map(product => (
                                 <option key={product.id} value={product.id}>
                                     {product.name ?? product.title ?? `Producto ${product.id}`}
                                 </option>
                             ))}
+
+                            
                         </select>
                     </>
                 }
