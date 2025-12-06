@@ -1,14 +1,14 @@
 @import '../../styles/variables.css';
 
-.shoppingCart-container{
+/* .shoppingCart-container{
     width: 50%;
     margin: 30px 25% 50px 25%;
-}
+} */
 
-.shoppingCart-button{
+/* .shoppingCart-button{
     width: 50%;
     margin: 50px 25% 0 25%;
-}
+} */
 
 .shoppingCart-container > .title-cart, .shoppingCart-container > .quantity-cart{
     padding-left: 50px;
