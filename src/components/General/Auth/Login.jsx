@@ -15,11 +15,11 @@ const Login = () => {
     e.preventDefault();
     
     // Autenticación
-    if (user === 'admin' && password === '1234') {
+    if ((user === 'admin' || user === 'Admin') && password === '1234') {
       login(user)
       navigate('/admin');
       setIsAuthenticated(true)
-    } else if (user === 'user' && password === '1234') {
+    } else if ((user === 'user' || user === 'User') && password === '1234') {
       login(user)
       navigate('/user');
       setIsAuthenticated(true)

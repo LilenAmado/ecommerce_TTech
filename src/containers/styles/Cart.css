@@ -123,6 +123,15 @@
     overflow-y: auto;
 }
 
+.shoppingCart-button {
+    width: 100%;
+    margin: 50px 0% 0px 0%;
+}
+
+.shoppingCart-container {
+    margin-bottom: 50px;
+}
+
 @media (max-width: 1000px) {
     .cart{
         right: 5%;
@@ -132,10 +141,7 @@
         width: 100%;
         margin: 30px 0% 50px 0%;
     }
-    .shoppingCart-button {
-        width: 100%;
-        margin: 50px 0% 0px 0%;
-    }   
+  
     .grid-cart {
         grid-template-columns: 80% 10%;
     }
@@ -145,5 +151,9 @@
     .cart{
         width: 100%;
         right: 0%;
+    }
+    .shoppingCart-container {
+        width: 100%;
+        margin: 30px 0% 50px 0%;
     }
 }
