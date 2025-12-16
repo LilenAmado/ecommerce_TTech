@@ -11,13 +11,15 @@ const ProductsContainer = ({data}) => {
   }, [])
 
   return (
-    <div className="products-container"> 
+    <>
       <div className='items-products-container'>
         <Text element={'title'} text={'Productos'} />
       </div>
-
-      <Products data={data} element={'products'} /> 
-    </div>
+      
+      <div className="products-container"> 
+        <Products data={data} element={'products'} /> 
+      </div>
+    </>
   )
 }
 

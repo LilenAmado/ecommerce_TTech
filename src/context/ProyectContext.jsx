@@ -9,8 +9,10 @@ export const ProyectContextProvider = (props) => {
     const [isHovered, setIsHovered] = useState(false);
     const [activeSection, setActiveSection] = useState(undefined)
     const [searchProduct, setSearchProduct] = useState()
+    const [searchQuery, setSearchQuery] =  useState('');
+    const [openSearch, setOpenSearch] = useState(false);
 
-    const value = { cart, setCart, isCartEmpty, setIsCartEmpty, isHovered, setIsHovered, activeSection, setActiveSection, searchProduct, setSearchProduct }
+    const value = { cart, setCart, isCartEmpty, setIsCartEmpty, isHovered, setIsHovered, activeSection, setActiveSection, searchProduct, setSearchProduct, searchQuery, setSearchQuery, openSearch, setOpenSearch };
 
     return (
         <ProyectContext.Provider value={value} >
