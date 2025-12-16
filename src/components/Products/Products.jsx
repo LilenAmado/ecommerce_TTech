@@ -1,7 +1,18 @@
+import { ProyectContext } from '../../context/ProyectContext.jsx';
+import { useContext } from 'react';
 import Card from '../General/Card/Card'
 import './Products.css'
 
 const Products = ({data, element}) => {
+
+  const {searchQuery} = useContext(ProyectContext);
+
+  const filteredData = data.filter(product => {
+    const productTitle = (product.title || product.name || '').toLowerCase();
+    return productTitle.includes(searchQuery.toLowerCase());
+  });
+
+// console.log(" data:", filteredData);
   switch(element) {
     case 'offer':
       return (
@@ -42,7 +53,7 @@ const Products = ({data, element}) => {
       return (
         <div className="products-container"> 
           <div className='items-products-container' key={data.id}>
-            {data.map((product) => (
+            {filteredData.map((product) => (
               <Card 
                 key={product.id}
                 element={'products'}

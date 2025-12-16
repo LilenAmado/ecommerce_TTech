@@ -30,3 +30,16 @@ button.btn:active {
     background-color: var(--color-accent-yellow) !important;
     box-shadow: none !important;
 }
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none !important;
+  color: inherit !important;
+}
